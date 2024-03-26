@@ -1,1 +1,3 @@
 # Preliminary-Test-for-Coronavirus-using-IoT
+
+This IoT Project involved an Automated Screening mechanism which was done by mainly using Temperature and Heart Rate sensors. This setup was installed at every entrance of our College building. The mail goal was to gather the health data of the student automatedly using sensors and to take action weather to allow the student or not into the premises. It is helpful for an infected patient of COVID-19 to identify symptoms and provides better treatment rapidly. This system was integrated into a Web Application developed using Django Framework which is used to control the hardware and data management is done.
