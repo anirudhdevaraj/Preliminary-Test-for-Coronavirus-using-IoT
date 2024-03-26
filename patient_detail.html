@@ -1,0 +1,25 @@
+{% extends "dappx/base.html" %}
+{% block body_block %}
+<body style="background: url(https://zolostays.com/blog/wp-content/uploads/2020/03/viktor-forgacs-FcDqdJUM6B4-unsplash-1.jpg) no-repeat;">
+  <style> 
+div {
+ opacity: 0.95;
+}
+</style>
+
+<div class="container">
+  <div class="jumbotron">
+<h1> Patient Details</h1><br>
+<h1>Patient_Name : {{ object.Patient_Name }} </h1>
+<h1>Age : {{ object.Age }} </h1>
+<h1>Patient_Location : {{ object.Patient_Location }} </h1>
+<h1>Phone_No : {{ object.Phone_No }} </h1>
+<h1>Aadhar_No : {{ object.Aadhar_No }} </h1>
+<h1>Address : {{ object.Address }} </h1>
+<h1>Email : {{ object.Email }} </h1>
+ <h1>Temperature : {{ object.Temperature }} °F</h1>
+<h1>Heart Rate : {{ object.Heart_Rate }} BPM</h1>
+<h1>BP Rate : {{ object.BP_Rate }} mmHg</h1>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "dappx/base.html" %}
+{% load static %}
+{% block body_block %}
+<body style="background: url(https://zolostays.com/blog/wp-content/uploads/2020/03/viktor-forgacs-FcDqdJUM6B4-unsplash-1.jpg) no-repeat;">
+  <style> 
+div {
+ opacity: 0.95;
+}
+</style>
+  <div class="container">
+    <div class="jumbotron">
+      {% if registered %}
+        <h1>Thank you for registering!</h1>
+      {% else %}
+        <h1>Register Here</h1>
+        <h3>Just fill out the form.</h3>
+<form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          <input type="submit" class="btn btn-primary btn-lg btn-block" name="" value="Register">
+        </form>
+        
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

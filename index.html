@@ -1,0 +1,42 @@
+{% extends "dappx/base.html" %}
+{% load static from static %}
+{% block body_block %}
+<body style="background: url(https://zolostays.com/blog/wp-content/uploads/2020/03/viktor-forgacs-FcDqdJUM6B4-unsplash-1.jpg) no-repeat;">
+  <style> 
+div {
+ opacity: 0.95;
+}
+</style>
+<div class="container">
+  <div class="jumbotron">
+    <center> <h1> <marquee scrollamount="25">Corona Virus Pliminary Testing!</marquee></h1> </center><br><br>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        <div><br><br>
+          <a href="{% url 'iotdata' %}">
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="" value="Get Data from Device">
+      </a><br><br>
+      <a href="{% url 'testing_list' %}">
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="" value="Get Testing Data">
+      </a><br><br>
+      <a href="{% url 'patient_list' %}">
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="" value="Get Patient Data">
+      </a>
+
+</div>
+    {% else %}
+        <h4 style="color:#0000A0;"><br>
+          <b>
+          The 2019–20 coronavirus outbreak is an ongoing epidemic of coronavirus disease 2019 (COVID-19), caused by the SARS-CoV-2 virus. There is an obvious concern globally regarding the fact about the emerging coronavirus 2019 novel coronavirus (COVID-19) as a worldwide public health threat. As the outbreak of COVID‐19 causes by the severe acute respiratory syndrome coronavirus 2 progresses within China and beyond, rapidly available epidemiological data are needed to guide strategies for situational awareness and intervention. Thousands of people died of coronavirus all over the world and uncountable number of people have been suffering from it. New tools of cell and molecular biology have led to increased understanding of intracellular replication and viral cell biology, and the advent in the past five years of reverse genetic approaches to study coronaviruses has made it possible to begin to define the determinants of viral replication, transspecies adaptation.<br><br>
+     </h4><h4 style="color:red;">
+Some serious symptoms of COVID-19 include:<br><br>
+1. Severe shortness of breath<br>
+2. Low blood pressure<br>
+3. Elevated heart rate (above 100 bpm)<br>
+4. Dehydration<br>
+5. Profound weakness<br>
+6. High fever</b></h4>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

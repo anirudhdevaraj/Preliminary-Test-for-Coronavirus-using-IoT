@@ -1,0 +1,18 @@
+{% extends "dappx/base.html" %}
+{% block body_block %}
+<body style="background: url(https://zolostays.com/blog/wp-content/uploads/2020/03/viktor-forgacs-FcDqdJUM6B4-unsplash-1.jpg) no-repeat;">
+  <style> 
+div {
+ opacity: 0.95;
+}
+</style>
+
+<div class="container">
+  <div class="jumbotron">
+<h1> Testing Details</h1><br>
+ <h1>Temperature : {{ object.Temperature1 }} °F</h1>
+<h1>Heart Rate : {{ object.Heart_Rate1 }} BPM</h1>
+<h1>BP Rate : {{ object.BP_Rate1 }} mmHg</h1>
+  </div>
+</div>
+{% endblock %}

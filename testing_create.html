@@ -1,0 +1,33 @@
+{% extends "dappx/base.html" %}
+{% block body_block %}
+<body style="background: url(https://zolostays.com/blog/wp-content/uploads/2020/03/viktor-forgacs-FcDqdJUM6B4-unsplash-1.jpg) no-repeat;">
+  <style> 
+div {
+ opacity: 0.95;
+}
+</style>
+
+<div class="container">
+  <div class="jumbotron">
+
+  	{% if messages %}
+<div class="row">
+
+    {% for message in messages %}
+    <h2{% if message.tags == "success" %} class="alert alert-success"{% endif %}>{{ message }}</h2>
+    {% endfor %}
+
+</div>
+{% endif %}
+
+<form action='.' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save' />
+    
+</form>
+<a href="{% url 'testing_list' %}">
+        <input type="submit"  name="" value="Back">
+      </a>
+  </div>
+</div>
+{% endblock %}

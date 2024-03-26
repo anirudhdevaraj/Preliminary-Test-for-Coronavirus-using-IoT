@@ -1,0 +1,60 @@
+{% extends "dappx/base.html" %}
+{% block body_block %}
+<body style="background: url(https://zolostays.com/blog/wp-content/uploads/2020/03/viktor-forgacs-FcDqdJUM6B4-unsplash-1.jpg) no-repeat;">
+  <style> 
+div {
+ opacity: 0.95;
+}
+</style>
+<div class="container">
+  
+  <div class="jumbotron">
+  <div id="form-wrapper" style="max-width:500px;margin:auto;"><style>
+#text-position {
+   position: absolute;
+   bottom: 350px;
+   text-align: center;
+   width: 30%;
+
+}
+.center {
+  text-align: center;
+}
+</style>
+
+
+<div class="center">
+{% if messages %}
+<div class="row">
+
+    {% for message in messages %}
+    <h2{% if message.tags == "success" %} class="alert alert-success"{% endif %}>{{ message }}</h2>
+    {% endfor %}
+
+</div>
+{% endif %}
+
+
+
+    <h1>Data</h1>
+    {% if user.is_authenticated %}
+    
+      <form action='.' method='POST'>{% csrf_token %}
+      {{ form.as_p }}
+      <br>
+      <input type='submit' class="btn btn-primary btn-lg btn-block" value='Check' />
+      </form>
+      <br><br>
+      <a href="{% url 'iotdetails' %}">
+        <input type="submit" class="btn btn-danger btn-lg btn-block" name="" value="Enter Paitent Data for Testing">
+      </a>
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+  </div>
+  </div>
+  </div>
+</div>
+{% endblock %}
+
+
